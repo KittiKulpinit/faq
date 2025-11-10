@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Accordion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: "Inter", sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+
+    #main-container {
+      background: linear-gradient(135deg, #ffffff, #fffeff);
+      height: 25vh;
+      width: 100%;
+    }
+
+    #card {
+      max-width: 500px;
+      width: 90%;
+      margin: -100px auto 0;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+
+    #box1 {
+      font-size: 35px;
+      font-weight: bold;
+      background-image: linear-gradient(135deg, #6F2296, #6428CA);
+      color: transparent;
+      background-clip: text;
+
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+    }
+
+    .question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      background-image: linear-gradient(135deg, #8F1FD8, #37098E);
+      color: transparent;
+      background-clip: text;
+      cursor: pointer;
+      padding: 10px 0;
+    }
+
+    .answer {
+      display: none;
+      font-size: 12px;
+      background-image: linear-gradient(135deg, #A98AD8, #E4C9FF);
+      color: transparent;
+      background-clip: text;
+      padding: 5px 0 10px 0;
+    }
+
+    .faq-item.active .answer {
+      display: block;
+    }
+
+    .icon {
+      width: 25px;
+      height: 25px;
+      transform: scale(2.25);
+    }
+
+    hr {
+      border: 0;
+      height: 0.75px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main-container"></div>
+  <div id="card">
+    <div id="box1"> ⟡ FAQs</div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="question">
+        Who am i?
+        <img class="icon" src="Plus.png" alt="toggle" />
+      </div>
+      <div class="answer">
+        My name's Kitti Kulpinit,who having interest in programing language.
+      </div>
+      <hr>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="question">
+        What programing language you able to do.
+        <img class="icon" src="Plus.png" alt="toggle" />
+      </div>
+      <div class="answer">
+        I'm not expert but i can do python, html, css, js, lua
+      </div>
+      <hr>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="question">
+        My school?
+        <img class="icon" src="Plus.png" alt="toggle" />
+      </div>
+      <div class="answer">
+        I'm studying at amatyakul since i were young. 
+      </div>
+      <hr>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="question">
+        Contact?
+        <img class="icon" src="Plus.png" alt="toggle" />
+      </div>
+      <div class="answer">
+        tel: 0803179566 or email: kittikulpinit@gmail.com
+      </div>
+      <hr>
+    </div>
+  </div>
+
+  <script>
+    // สำหรับเปิด 1 แล้วปิดที่เหลือ
+    // function toggleFAQ(element) {
+    //   const allItems = document.querySelectorAll(".faq-item");
+
+    //   allItems.forEach(item => {
+    //     if (item !== element) {
+    //       item.classList.remove("active");
+    //       item.querySelector(".icon").src = "Plus.png";
+    //     }
+    //   });
+
+    //   element.classList.toggle("active");
+    //   const icon = element.querySelector(".icon");
+    //   icon.src = element.classList.contains("active") ? "Minus.png" : "Plus.png";
+    // }
+
+    function toggleFAQ(element) {
+
+      element.classList.toggle("active");
+
+      const icon = element.querySelector(".icon");
+
+      icon.src = element.classList.contains("active") ? "Minus.png" : "Plus.png";
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>
